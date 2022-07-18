@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <center>
+    <div class = "login">
+        <h1>Predicción de Fuga de Clientes</h1>
+        <form action = "{{ url_for('predict')}}" method="post">
+          
+          <input type = "tex" name = "vnline_n" placeholder = "vnline_n" required = "required"/>
+          <input type = "tex" name = "vccdeu_n" placeholder = "vccdeu_n" required = "required"/>
+          <input type = "tex" name = "ttkbco_n" placeholder = "ttkbco_n" required = "required"/>
+          <input type = "tex" name = "vedadc_n" placeholder = "vedadc_n" required = "required"/>
+          
+          <br></br>
+          <label for = "vgamma_c">vgamma_c &nbsp</label>
+            <select id="vgamma_c" name="vgamma_c">
+                  <option value="0">ALTA</option>
+                  <option value="1">BAJA</option>
+                  <option value="2">MEDIA</option>
+                  <option value="3">PREMIUM</option>
+                  <option value="4">PREMIUM PLUS</option>  
+            </select>
+          
+          <label for = "veaseg_c">&nbsp &nbsp veaseg_c &nbsp</label>
+            <select id="veaseg_c" name="veaseg_c">
+                  <option value="0">n</option>
+                  <option value="1">no</option>
+                  <option value="2">s</option>
+            </select>
+          <br></br>
+
+          <button type= "text" class= "btn btn-primary btn-block btn-large">Predicción</button>
+        </form>
+        <p>
+          {{prediction_text}}
+        </p>
+    </div>
+  </center>
+  </body>
+</html>
